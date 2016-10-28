@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :set_post, only: [:show, :edit, :update, :destroy]
+	# before_action :set_post, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	#GET /posts
@@ -11,11 +11,13 @@ class PostsController < ApplicationController
 	# GET /posts/1
 	# GET /posts/1.json
 	def show
+		@posts = current_user.posts.all
 	end
 
 	# GET /posts/new
 	def new
-		@post = current_user.posts.build
+		@post = Post.new
+		#@post = current_user.posts.build
 	end
 
 	# GET /posts/1/edit
@@ -25,16 +27,15 @@ class PostsController < ApplicationController
 	# POST /posts
 	# POST /posts.json
 	def create
-		@post = current_user.posts.build(post_params)
-		if @post.save 
-			redirect_to @post 
-		else	
-			render 'new'
-		end
-	end
+		@post = Post.new(post_params)
+		@post.save
 
-	def show
-
+		# @post = current_user.posts.build(post_params)
+		# if @post.save 
+		# 	redirect_to @post 
+		# else	
+		# 	render 'new'
+		# end
 	end
 
 	private
@@ -43,8 +44,8 @@ class PostsController < ApplicationController
 		params.require(:post).permit(:content, :body)
 	end
 
-	def set_post
-		
-	end
+	# def set_post
+
+	# end
 
 end
