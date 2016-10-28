@@ -1,4 +1,33 @@
+
+
+
+
 <%= form_for @post do |f| %>
-	<%= f.text_area :content %>
-	<%= f.submit %>
+  
+  <%= f.text_field :content %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit "Create" %>
 <% end %>
+
+
+
+
+
+<h1> Test </h1>
+
+<p>
+	<strong> User: <%= current_user.firstname %> </strong>
+	
+</p>
+
+<p>
+	<strong> Posts: </strong>
+	<ul>
+	<% @posts.each do |post| %>
+		<li><%= post.content %></li>
+		<br>
+		
+	<% end %>
+	</ul>
+</p>
+
