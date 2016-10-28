@@ -12,11 +12,14 @@ class PostsController < ApplicationController
 	# GET /posts/1.json
 	def show
 		@posts = current_user.posts.all
+		@last_post = Post.last
 	end
 
 	# GET /posts/new
 	def new
-		@post = Post.new
+	@post = Post.new
+	@posts = Post.all	
+
 		#@post = current_user.posts.build
 	end
 
@@ -27,21 +30,22 @@ class PostsController < ApplicationController
 	# POST /posts
 	# POST /posts.json
 	def create
+		p "james"
 		@post = Post.new(post_params)
-		@post.save
 
 		# @post = current_user.posts.build(post_params)
-		# if @post.save 
-		# 	redirect_to @post 
-		# else	
-		# 	render 'new'
-		# end
+		if @post.save 
+			redirect_to @post 
+		else	
+			p "FAILED"
+			render 'new'
+		end
 	end
 
 	private
 
 	def post_params
-		params.require(:post).permit(:content, :body)
+		params.require(:post).permit(:content, :user_id)
 	end
 
 	# def set_post

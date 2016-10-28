@@ -15,7 +15,5 @@ root 'posts#index'
   
 get 'welcome/index', as: 'user_root'
 
-get 'posts/:id' => 'posts#show'
-
 
 end
