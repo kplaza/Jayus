@@ -18,13 +18,21 @@ class PostsController < ApplicationController
 	# GET /posts/new
 	def new
 	@post = Post.new
-	@posts = Post.all	
+	@posts = Post.all
 
 		#@post = current_user.posts.build
 	end
 
 	# GET /posts/1/edit
 	def edit
+		@post = Post.find(params[:id])
+
+	end
+
+	def update
+		@post = Post.find(params[:id])
+		@post.update(content: params[:post][:content])
+		redirect_to '/posts/new'
 	end
 
 	# POST /posts
@@ -33,10 +41,11 @@ class PostsController < ApplicationController
 		p "james"
 		@post = Post.new(post_params)
 
+
 		# @post = current_user.posts.build(post_params)
-		if @post.save 
-			redirect_to @post 
-		else	
+		if @post.save
+			redirect_to '/posts/new'
+		else
 			p "FAILED"
 			render 'new'
 		end
@@ -46,6 +55,11 @@ class PostsController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(:content, :user_id)
+	end
+
+	def destroy
+		Post.delete(params[:id])
+		redirect_to '/posts/new'
 	end
 
 	# def set_post
