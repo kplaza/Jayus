@@ -24,7 +24,7 @@
 	<strong> Posts: </strong>
 	<ul>
 	<% @posts.each do |post| %>
-		<li><%= post.content %></li>
+		<li><%= post.content %>: &nbsp; <%= post.user.email%> </li>
 		<br>
 		
 	<% end %>

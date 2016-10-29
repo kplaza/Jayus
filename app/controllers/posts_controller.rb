@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
 		# @post = current_user.posts.build(post_params)
 		if @post.save 
-			redirect_to @post 
+			redirect_to '/posts/new' 
 		else	
 			p "FAILED"
 			render 'new'
@@ -43,6 +43,7 @@ class PostsController < ApplicationController
 	end
 
 	private
+
 
 	def post_params
 		params.require(:post).permit(:content, :user_id)

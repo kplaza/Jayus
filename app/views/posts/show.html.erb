@@ -6,7 +6,7 @@
 <p>
 	<strong> Posts: </strong>
 	<ul>
-	
+	<% @posts.each do |post| %>
 		<li><%= @post.content %></li>
 		<br>
 	<% end %>
