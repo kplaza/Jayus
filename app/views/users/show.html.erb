@@ -1,0 +1,47 @@
+<%= @message %>
+
+<div id='ProfilePagestyle'>
+<div id="ProfilePage">
+    <div id="LeftCol">
+        <div id="Photo"></div>
+        <div id="ProfileOptions">
+        <%= @username %>
+        </div>
+    </div>
+
+    <div id="Info">
+        <p> 
+            <strong>User Name:</strong>
+           <span><%=@user.username%></span>
+        </p>
+     
+
+        <p>
+            <strong>First Name:</strong>
+            <span> <%= @user.firstname %> </span>
+        </p>
+        <p>
+            <strong>Last Name:</strong>
+            <span></span>
+        </p>
+        <p>
+            <strong>Email:</strong>
+            <span> <%= @user.email %> </span>
+        </p>
+        <p>
+            <strong>password:</strong>
+            <span> <%=@user.password %> </span>
+        </p>
+
+            <p>
+            <strong> Comment History: </strong>
+           
+            </p>
+    </div>
+
+<!-- <button  onclick="location.href='/users/:id/edit'" class="button">EDIT PROFILE</button>
+ -->    <!-- Needed because other elements inside ProfilePage have floats -->
+    <div style="clear:both"></div>
+</div>
+
+</div>

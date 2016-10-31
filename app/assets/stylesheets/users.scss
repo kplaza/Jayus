@@ -1,0 +1,112 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background-color: #4286f4;
+}
+
+#ProfilePagestyle{
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  margin: 0;
+  background-image: url("/images/personal.jpg");
+  background-size: cover;
+
+}
+
+
+ .button {
+    position: relative;
+    right: 10px;
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+
+#ProfilePage {
+    /* Move it off the top of the page, then centre it horizontally */
+    position: absolute;
+    left: 290px;
+    margin: 250px auto;
+    width: 635px;
+    padding: 30px 30px;
+    color: white;
+    text-shadow: 0 0 10px black;
+    background-color: rgba(255,255,255, 0.5);
+    
+
+}
+
+
+#LeftCol
+{
+    /* Move it to the left */
+    float: left;
+
+    width: 200px;
+    text-align: center;
+
+    /* Move it away from the content */
+    margin-right: 20px;
+
+}
+
+#Photo
+{
+    background-image: url("/images/profile.png");
+    background-size: cover;
+    /* Width and height of photo container */
+    width: 200px;
+    height: 200px;
+
+}
+
+#PhotoOptions
+{
+    text-align: center;
+    width: 200px;
+
+}
+
+#Info
+{
+    width: 400px;
+    text-align: left;
+    font-size: 17px;
+    /* Move it to the right */
+    float: right;
+    font-weight: bold;
+}
+
+
+#Info strong
+{
+    /* Give it a width */
+    display: inline-block;
+    width: 100px;
+
+}
+
+#Info span
+{
+    /* Give it a width */
+    display: inline-block;
+    width: 250px;
+    color: #350866;
+    text-shadow: 0 0 10px white;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px white;
+
+
+}

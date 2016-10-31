@@ -3,7 +3,7 @@
 <%= form_for @post do |f| %>
 <%= f.hidden_field :user_id, value: current_user.id %>
 <%= f.label :content %>
-<%= f.text_field :content %>
+<%= f.text_area :content, size: "44x10" %>
 <br>
  
  <%= f.submit %>
