@@ -1,0 +1,10 @@
+<!--We want this to go on the posts/new  -->
+
+<%= form_for @post do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.label :content %>
+<%= f.text_field :content %>
+<br>
+ 
+ <%= f.submit %>
+ <% end %>

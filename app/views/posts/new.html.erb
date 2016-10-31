@@ -3,31 +3,39 @@
 
 
 <%= form_for @post do |f| %>
-  
-  <%= f.text_field :content %>
+
+  <%= f.text_area :content, size: "44x10" %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit "Create" %>
 <% end %>
 
 
-
-
-
 <h1> Test </h1>
 
 <p>
-	<strong> User: <%= current_user.firstname %> </strong>
-	
+	<strong> User: <%= current_user.email %> </strong>
+
 </p>
+
 
 <p>
 	<strong> Posts: </strong>
 	<ul>
 	<% @posts.each do |post| %>
-		<li><%= post.content %>: &nbsp; <%= post.user.email%> </li>
-		<br>
-		
-	<% end %>
+   <!-- This is displaying the post along with the users email that commented -->
+		<li> <%= post.user.email %>: &nbsp; <%= post.content %> </li> <%= link_to "Reply", post_path(post.id) %>
+    <!--This is wheere we would want the Edit and Delete to show if its this users post  -->
+    <% if user_signed_in? %>
+      <ul>
+        <li><%= button_to 'Edit', {action: :edit, id: post.id}, method: :get %> </li>
+          <li><%= button_to 'Destroy', {action: :destroy, id: post.id}, method: :delete, data:{confirm: 'Are you sure?'} %>
+          </li>
+      </ul>
+    <% else %>
+      <li><%= link_to 'Sign In', new_user_session_path %> </li>
+      <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+<!-- Test end here -->
+      <% end %>
+    <% end %>
 	</ul>
 </p>
-

@@ -1,17 +1,19 @@
 <p>
-	<strong> User: </strong>
+	<strong> User: <%= current_user.email %></strong>
 	
 </p>
 
 <p>
-	<strong> Posts: </strong>
+	<strong> Posts:  </strong>
 	<ul>
-	<% @posts.each do |post| %>
 		<li><%= @post.content %></li>
 		<br>
-	<% end %>
 	</ul>
 </p>
 
+  <li><%= render "comments/form" %></li>
 
+<% @post.comments.each do |comm| %>
+<%= comm.content %><br>
+<% end %>
 <%= @last_post.content %>

@@ -1,4 +1,7 @@
-<%= form_for ([@post, @post.comments.build]) do |f| %>
-	<%= f.text_area :content %>
-	<%= f.submit %>
+
+
+<%= form_for [@post, @post.comments.build] do |c| %>
+  <%= c.text_area :content, size: "44x10" %>
+  <%= c.hidden_field :user_id, value: current_user.id %>
+  <%= c.submit "Create" %>
 <% end %>
