@@ -102,10 +102,9 @@ body{
     /* Give it a width */
     display: inline-block;
     width: 250px;
-    color: #350866;
+   border:2px solid red;
     text-shadow: 0 0 10px white;
     text-transform: uppercase;
-    
-
+    border-radius: 5px;
 
 }

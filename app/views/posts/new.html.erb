@@ -23,14 +23,17 @@
 	<ul>
 	<% @posts.each do |post| %>
    <!-- This is displaying the post along with the users email that commented -->
-		<li> <%= post.user.email %>: &nbsp; <%= post.content %> </li> <%= link_to "Reply", post_path(post.id) %>
+   <div id="Info">
+	<span><li> <%= post.user.email %>: &nbsp; <%= post.content %> </li> <%= link_to "View", post_path(post.id) %> </span>
     <!--This is wheere we would want the Edit and Delete to show if its this users post  -->
+
     <% if user_signed_in? %>
       <ul>
         <li><%= button_to 'Edit', {action: :edit, id: post.id}, method: :get %> </li>
           <li><%= button_to 'Destroy', {action: :destroy, id: post.id}, method: :delete, data:{confirm: 'Are you sure?'} %>
           </li>
       </ul>
+      </div>
     <% else %>
       <li><%= link_to 'Sign In', new_user_session_path %> </li>
       <li><%= link_to 'Sign Up', new_user_registration_path %></li>

@@ -1,3 +1,26 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#Info
+{
+    width: 400px;
+    text-align: left;
+    font-size: 17px;
+    /* Move it to the right */
+    float: right;
+    font-weight: bold;
+}
+
+
+
+#Info span
+{
+    /* Give it a width */
+    display: inline-block;
+    width: 250px;
+    color: #350866;
+    text-shadow: 0 0 10px white;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px white;
+}
