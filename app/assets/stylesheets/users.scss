@@ -11,7 +11,6 @@ body{
   width: 100%;
   min-height: 800px;
   margin: 0;
-  background-image: url("/images/personal.jpg");
   background-size: cover;
 
 }
@@ -64,11 +63,11 @@ body{
 
 #Photo
 {
-    background-image: url("/images/profile.png");
     background-size: cover;
     /* Width and height of photo container */
     width: 200px;
     height: 200px;
+   border: 2px solid red;
 
 }
 
@@ -106,7 +105,7 @@ body{
     color: #350866;
     text-shadow: 0 0 10px white;
     text-transform: uppercase;
-    text-shadow: 0 0 10px white;
+    
 
 
 }
